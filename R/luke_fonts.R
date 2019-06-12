@@ -10,7 +10,7 @@
 #' @export
 
 luke_fonts <- function(approx = TRUE, ...) {
-  out <- if(approx) else "Accura" 
+  out <- if(approx) "Arial" else "Accura" 
          
   # done
   out

@@ -4,15 +4,15 @@
 \alias{luke_colours}
 \title{Luke Colours}
 \usage{
-luke_colours(type = "web", names = "informal", ...)
+luke_colours(format = "web", naming = "informal", ...)
 }
 \arguments{
-\item{type}{web, rgb, or hsv}
+\item{format}{Return the colors in format: web, rgb, or hsv}
 
-\item{names}{informal or PMS}
+\item{naming}{Naming of the colours: informal (unofficial) or PMS (for printing)}
 
 \item{...}{ignored}
 }
 \description{
-Luke Colours
+Return the official colour palette
 }
