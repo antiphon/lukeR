@@ -4,12 +4,15 @@
 \alias{luke_colours}
 \title{Luke Colours}
 \usage{
-luke_colours(format = "web", naming = "informal", ...)
+luke_colours(format = "web", naming = "informal", program = NULL,
+  ...)
 }
 \arguments{
 \item{format}{Return the colors in format: web, rgb, or hsv}
 
 \item{naming}{Naming of the colours: informal (unofficial) or PMS (for printing)}
+
+\item{program}{Specific program, initials in Finnish. Returns only the bubble-color, which is light blue for general use.}
 
 \item{...}{ignored}
 }
