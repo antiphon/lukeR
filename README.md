@@ -8,20 +8,22 @@ R package for Luke-related themes and templates.
 ### Themes
 
 * ggplot 
-    * geoms: line, ribbon, bar, histogram, raster etc
+    * geoms: line, ribbon, bar, histogram, raster, smooth etc
     * scale_fill_gradient
     * scale_fill_gradient2
     * scale_fill_continous
     * scale_fill_discrete
-* raster, rasterViz
+    * facet_grid wrap
+* raster, rasterViz, spplot
 * Shiny app css
 * R-markdown document css 
-
+* flexdashboard css
 
 
 ### Graphical elements
 
-* Color palette
+* Color palettes: main, fades, sets for plots 
+* typeface names
 * Luke logo with adjustable colors
     * background
     * title

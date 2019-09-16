@@ -8,3 +8,7 @@ Maintainer: Tuomas Rajala <tuomas.rajala@luke.fi>
 Description: Luke colour palettes, fonts and themes.
 License: Restricted
 RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

@@ -1,0 +1,33 @@
+---
+title: "ggplot examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ggplot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(lukeR)
+library(ggplot2)
+```
+
+```{r}
+x <- data.frame(x = runif(1000), y = runif(1000), m = sample(LETTERS[1:4], 1000, TRUE))
+
+p <- ggplot(x) + theme_luke() + ggtitle("Title 1", subtitle = "Sub-title 1")
+p + geom_point(aes(x=x, y = y, col = m))
+```
+
+```{r}
+p + geom_histogram(aes(x = x, fill = m)) + facet_wrap(~m)
+```
+
+
