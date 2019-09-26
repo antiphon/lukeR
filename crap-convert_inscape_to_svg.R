@@ -2,6 +2,7 @@
 
 library(rsvg)
 library(grImport2)
+library(grid)
 fl <- c("backplate", "bubble", "LUKE", "text_se")
 names(fl) <- fl
 
@@ -11,7 +12,7 @@ pics <- lapply(fl, function(f){
 })
 
 # Replace backplate with a square
-b <- pics$backplate@defs@content$image412
+b <- pics$backplate@defs@content$image
 gpar(x=b@x, y=b@y, bbox = b@bbox)
 # Replace colors:
 newcols <- list(backplate = list(fill = "#ffffff",
