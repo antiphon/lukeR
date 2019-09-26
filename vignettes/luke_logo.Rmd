@@ -1,0 +1,105 @@
+---
+title: "luke_logo examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{luke_logo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+  
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Examples of creating Luke logo images in custom bitmap sizes and colors. The logo is by default saved as in 'png' bitmap format. Replace suffix with 'pdf' or 'svg' to save as scalable vector graphics.
+
+The logo will be stored in the `file`. Path relative to working directory, as usual.
+
+
+```{r setup}
+library(lukeR)
+```
+
+# Basic logos
+
+Luke's logo uses Luke's basic colors. The main colors and accent colors are
+```{r}
+luke_colours()
+```
+
+
+```{r}
+# basic
+luke_logo( file = "logo1.png", width = 250) # width in pixels
+luke_logo( file = "logo1.pdf", width = 250)
+```
+![Luke's standard logo.](`r "logo1.png"`)
+
+Language of the text can be defined to be either Finnish ("fi"), English ("en"), or Swedish ("se"):
+```{r}
+luke_logo( file = "logo1_en.png", lang = "en", width = 150) 
+```
+
+![Logo in English.](`r "logo1_en.png"`)
+
+
+# Custom colors and background opacity
+
+The color of each component can be defined using web-format (e.g. "#00ff00" for green).
+
+```{r}
+# Colors 
+luke_logo(
+  bg = "#000000",
+  luke = "#00ff00",
+  bubble = "#ff0000",
+  text = "#0000ff",
+  file = "logo2.png", 
+  width = 150) 
+```
+![Custom colors.](`r "logo2.png"`)
+
+Leaving a color empty will remove the element:
+
+```{r}
+# Colors 
+luke_logo(
+  text = NULL,
+  file = "logo_notext.png", 
+  width = 150) 
+```
+![No text.](`r "logo_notext.png"`)
+
+
+Opacity of the background can be adjusted:
+
+```{r}
+# Opacity of background
+luke_logo(bg = "#00ff00", bg_opacity =.1, file = "logo3a.png", width=120)
+luke_logo(bg = "#00ff00", bg_opacity =.5, file = "logo3b.png", width=120)
+luke_logo(bg = "#00ff00", bg_opacity =.9, file = "logo3c.png", width=120)
+```
+
+.1 | .5 | .9
+:-------:|:--------:|:---------:
+![](`r "logo3a.png"`)|![](`r "logo3b.png"`)|![](`r "logo3c.png"`)
+
+
+How to make a theme-suitable logo:
+
+```{r}
+w <- "#ffffff" # white
+luke_logo(bg = luke_colours(program = "SB"),
+          bubble = w,
+          luke = w, 
+          text = w,
+          bg_opacity = 0.9,
+          file = "logo_bluebio.png", width = 200)
+```
+
+!["Sininen biotalous".](`r "logo_bluebio.png"`)
+
+

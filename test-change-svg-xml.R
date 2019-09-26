@@ -12,6 +12,7 @@ fi <- paste0("inst/extdata/", part, ".svg")
 #fi <- "inst/extdata/bubble.svg"
 a <- xmlTreeParse(fi, useInternalNodes = TRUE)
 pl <- getNodeSet(a, "//svg:path")
+
 for(p in pl){
   att <- xmlAttrs(p)
   if('style' %in% names(att)) {
@@ -35,12 +36,13 @@ saveXML(a, fo, prefix = "")
 
 # Compile
 set <- c("bubble", "LUKE", "text_en")
-
 new <- xmlTreeParse("backplate_red.svg", useInternalNodes = TRUE)
-canvas <- getNodeSet(new, "//svg")[[1]]
+canvas <- xmlChildren(new)$svg
 # add these
-bit <- xmlTreeParse("LUKE_red.svg", useInternalNodes = TRUE)
-l <- getNodeSet(bit, "//svg:g")
-ok <- sapply(l, function(i) 'style' %in% names( xmlAttrs(i)) )
-addChildren(canvas, l[ok])
+for(s in set){
+  bit <- xmlTreeParse(paste0(s, "_red.svg"), useInternalNodes = TRUE)
+  l <- getNodeSet(bit, "//svg:g")
+  ok <- sapply(l, function(i) 'style' %in% names( xmlAttrs(i)) )
+  addChildren(canvas, l[ok])
+}
 saveXML(new, "test.svg", prefix = "")

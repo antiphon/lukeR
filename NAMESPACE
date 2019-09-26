@@ -2,8 +2,11 @@
 
 export(luke_colours)
 export(luke_fonts)
+export(luke_logo)
 export(luke_pal)
 export(scale_color_luke_c)
 export(scale_color_luke_d)
 export(scale_fill_luke)
 export(theme_luke)
+import(XML)
+import(rsvg)
