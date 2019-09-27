@@ -2,17 +2,23 @@
 #' 
 #' Create a presentation template in a desired location.
 #' 
-#' @param path path to location where to create template
+#' @param path path to location where to create template. Default is current working directory.
 #' @param type Powerpoint ('pp') or LaTeX Beamer ('beamer')
 #' @param lang 'fi', 'en' or 'se'
+#' @param ask Prompt if new directory is to be created. If FALSE just create it.
 #' @details 
+#' Copies the bare minimum files for a presentation in Luke colours into 'path'. The Beamer 
+#' presentation is an imitation of the official Powerpoint template.
+#' 
+#' 
+#' @export
 
-luke_presentation <- function(path =".", type = "pp", lang = "en") {
+luke_presentation <- function(path =".", type = "pp", lang = "en", ask = TRUE) {
   if(!lang %in% c("fi", "en", "se")) stop("'lang' should be one of 'en', 'fi', 'se'.")
   if(! dir.exists(path) ) {
-    a <- readline("Path does not exist, create it? [y/n]")
+    a <- if(ask) readline("Path does not exist, create it? [y/n]") else "y"
     if(tolower(a) == "y") dir.create(path)
-      else {message("halted.");return()}
+      else {message("Canceled.");return()}
   }
   
   #browser()
@@ -24,8 +30,9 @@ luke_presentation <- function(path =".", type = "pp", lang = "en") {
     files_out <- files_in
   }
   else{
-    files_in <- c(paste0("luke-beamer-template-", tolower(lang), ".tex"), "beamerthemeluke.sty", "isokupla-white.png")
-    files_out <- c("luke-beamer-template.tex", "beamerthemeluke.sty", "isokupla-white.png")
+    files_in <- c(paste0("luke-beamer-template-", tolower(lang), ".tex"), "beamerthemeluke.sty", 
+                  "bubble_white.png")
+    files_out <- c("luke-beamer-template.tex", "beamerthemeluke.sty", "bubble_white.png")
   }
   # copy files
   #browser()

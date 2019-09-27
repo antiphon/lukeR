@@ -1,6 +1,5 @@
-%\ProvidesPackageRCS $Header: luke-beamer-style.sty,v 1.0 2019/09/26 10:50:12$
+%\ProvidesPackageRCS $Header: beamerthemeluke.sty,v 1.0 2019/09/26 10:50:12$
 
-%\def\@luketext{jee}
 
 \DeclareOptionBeamer{lang}{
 \edef\tma{\detokenize{#1}}
@@ -24,7 +23,7 @@
 % Logo
 \pgfdeclareimage[height=1.5cm]{logo}{logo}
 \pgfdeclareimage[height=1.5cm]{logo-orange}{logo_orange}
-\pgfdeclareimage[height=13cm]{bigbubble-white}{isokupla-white}
+\pgfdeclareimage[height=13cm]{bigbubble-white}{bubble_white}
 
 % COLORS
 \definecolor{lukeblue}{RGB}{0,181,226}
@@ -58,12 +57,12 @@
 { 
   \begin{tikzpicture}[remember picture,overlay]
   \node[at=(current page.center),fill=lukeorange, minimum width=2\paperwidth, minimum height=2\paperheight] {};
-  \node [at=(current page.west), xshift=2.3cm] {\pgfuseimage{bigbubble-white}};
+  \node[at=(current page.west), xshift=2.3cm] {\pgfuseimage{bigbubble-white}};
   \node[anchor=south east,yshift=7pt, xshift=-6pt](logo) at (current page.south east) {\pgfuseimage{logo-orange}};
   \node[left of=logo, xshift=-2cm, yshift=-.5cm] {\usebeamerfont{footline}\color{white}\textcopyright\ \@luketext};
   \end{tikzpicture}
   \hspace*{-.5cm}
-  \begin{beamercolorbox}[wd=8cm]{black}
+  \begin{beamercolorbox}[wd=8cm]{title page text}
   \usebeamerfont{title}\color{lukeblue}\inserttitle\par
   \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
   \bigskip
@@ -87,6 +86,7 @@
 \begin{beamercolorbox}[wd=\paperwidth, dp=0.2cm, ht=0.8cm, rightskip=0pt plus 4em]{frametitle}
   \hskip20pt \insertframetitle  \vskip0pt
 \end{beamercolorbox} 
+%\addtocounter{framenumber}{-1}
 }
 
 % FOOTER 
@@ -99,7 +99,7 @@
 	  \node[left of=logo, xshift=-2cm, yshift=-.5cm] {\usebeamerfont{footline}\color{gray}\textcopyright\ \@luketext};
 	\node[at=(current page.south west), xshift=1.1cm, yshift=-.1cm](a) {};
 	\node[above of=a](b) {};
-	\node[right of=b, yshift=-.4cm, xshift=-.5cm] {\usebeamerfont{footline}\color{gray}\insertpagenumber};
+	\node[right of=b, yshift=-.4cm, xshift=-.5cm] {\usebeamerfont{footline}\color{gray}\insertframenumber};
 	\draw[-, color=lukeorange, line width=1pt] (a) -- (b);
 	\end{tikzpicture}    
 \else{}

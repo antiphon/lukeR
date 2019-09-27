@@ -4,15 +4,21 @@
 \alias{luke_presentation}
 \title{Templates for Presentations}
 \usage{
-luke_presentation(path = ".", type = "pp", lang = "en")
+luke_presentation(path = ".", type = "pp", lang = "en", ask = TRUE)
 }
 \arguments{
-\item{path}{path to location where to create template}
+\item{path}{path to location where to create template. Default is current working directory.}
 
 \item{type}{Powerpoint ('pp') or LaTeX Beamer ('beamer')}
 
 \item{lang}{'fi', 'en' or 'se'}
+
+\item{ask}{Prompt if new directory is to be created. If FALSE just create it.}
 }
 \description{
 Create a presentation template in a desired location.
+}
+\details{
+Copies the bare minimum files for a presentation in Luke colours into 'path'. The Beamer 
+presentation is an imitation of the official Powerpoint template.
 }
