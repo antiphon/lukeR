@@ -11,9 +11,13 @@ luke_fonts(approx = TRUE, ...)
 
 \item{...}{ignored}
 }
+\value{
+The string "Accura" or "Arial".
+}
 \description{
-Return font info on the luke's fonts.
+Return font typeface name for text.
 }
 \details{
-The official font family is "Accura", which is a commercial font published by MyFonts.com. A close approximation
+The official font family is "Accura", which is a commercial font published by MyFonts.com. A close approximation is Arial. 
+On websites, Titllium Web Semibold is used for titles and Ek Mukta Regular for other. From Google Fonts.
 }

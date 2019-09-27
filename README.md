@@ -22,9 +22,12 @@ R package for Luke-related themes and templates.
 
 ### Graphical elements
 
-* Color palettes: main, fades, sets for plots 
-* typeface names
-* Luke logo with adjustable colors
+* Color palettes: 
+   * ~~main~~
+   *  fades
+   *  sets for plots 
+* ~~typeface names~~
+* ~~Luke logo with adjustable colors~~
     * background
     * title
     * bubble

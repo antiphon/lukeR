@@ -1,0 +1,116 @@
+%\ProvidesPackageRCS $Header: luke-beamer-style.sty,v 1.0 2019/09/26 10:50:12$
+
+%\def\@luketext{jee}
+
+\DeclareOptionBeamer{lang}{
+\edef\tma{\detokenize{#1}}
+\edef\tmb{\detokenize{fi}}
+\edef\tmc{\detokenize{se}}
+\def\@luketext{Natural Resources Institute Finland}
+\ifx\tma\tmb\relax \def\@luketext{Luonnonvarakeskus}\fi
+\ifx\tma\tmc\relax \def\@luketext{Naturresursinstitutet}\fi
+	 
+
+}
+\ProcessOptionsBeamer
+
+
+%\def\@ctext{Luonnonvarakeskus}
+
+\useinnertheme{circles}
+
+\setbeamertemplate{navigation symbols}{} 
+
+% Logo
+\pgfdeclareimage[height=1.5cm]{logo}{logo}
+\pgfdeclareimage[height=1.5cm]{logo-orange}{logo_orange}
+\pgfdeclareimage[height=13cm]{bigbubble-white}{isokupla-white}
+
+% COLORS
+\definecolor{lukeblue}{RGB}{0,181,226}
+\definecolor{lukeorange}{RGB}{255,130,0}
+\definecolor{lukedarkgray}{RGB}{84,88,90}
+\definecolor{lukedarkblue}{RGB}{0,51,160}
+\definecolor{lukefuchsia}{RGB}{225,60,152}
+\definecolor{lukegreen}{RGB}{120,190,32}
+\definecolor{lukeviolet}{RGB}{127,63,152}
+
+\setbeamercolor{structure}{fg=white}
+\setbeamercolor{normal text}{fg=lukedarkgray, bg = white}
+\setbeamercolor{title page text}{fg=black}
+\setbeamercolor{title page}{bg=lukeorange}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{title_headline}{fg=black, bg=white}
+\setbeamercolor{headline}{fg=black, bg=white}
+\setbeamercolor{headline_below}{bg=white, fg=lukeblue}
+\setbeamercolor{frametitle}{fg=lukeorange, bg=white}
+\setbeamercolor{footline}{bg=white, fg=lukedarkgray}
+\setbeamercolor{math text}{fg=lukedarkgray}
+\setbeamercolor{math headline}{fg=white}
+\setbeamercolor{itemize item}{fg=black}
+\setbeamercolor{enumerate item}{fg=black, bg=black}
+
+%--------------- Layout ------------------------------------%
+
+
+% TITLE PAGE
+\setbeamertemplate{title page}
+{ 
+  \begin{tikzpicture}[remember picture,overlay]
+  \node[at=(current page.center),fill=lukeorange, minimum width=2\paperwidth, minimum height=2\paperheight] {};
+  \node [at=(current page.west), xshift=2.3cm] {\pgfuseimage{bigbubble-white}};
+  \node[anchor=south east,yshift=7pt, xshift=-6pt](logo) at (current page.south east) {\pgfuseimage{logo-orange}};
+  \node[left of=logo, xshift=-2cm, yshift=-.5cm] {\usebeamerfont{footline}\color{white}\textcopyright\ \@luketext};
+  \end{tikzpicture}
+  \hspace*{-.5cm}
+  \begin{beamercolorbox}[wd=8cm]{black}
+  \usebeamerfont{title}\color{lukeblue}\inserttitle\par
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \bigskip
+  \usebeamerfont{author}\insertauthor\par
+  \usebeamerfont{institute}\insertinstitute\par
+  \usebeamerfont{date}\insertdate\par
+  \end{beamercolorbox}
+}
+
+
+% HEADER
+\setbeamertemplate{headline}
+{
+\vskip-5pt
+}
+
+% FRAMETITLE
+\setbeamertemplate{frametitle} 
+{
+\vskip6pt
+\begin{beamercolorbox}[wd=\paperwidth, dp=0.2cm, ht=0.8cm, rightskip=0pt plus 4em]{frametitle}
+  \hskip20pt \insertframetitle  \vskip0pt
+\end{beamercolorbox} 
+}
+
+% FOOTER 
+\setbeamertemplate{footline}
+{
+\begin{beamercolorbox}[wd=\paperwidth, dp=0.0cm]{}
+\ifnum\thepage>1\relax%
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=south east,yshift=7pt, xshift=-6pt](logo) at (current page.south east) {\pgfuseimage{logo}};
+	  \node[left of=logo, xshift=-2cm, yshift=-.5cm] {\usebeamerfont{footline}\color{gray}\textcopyright\ \@luketext};
+	\node[at=(current page.south west), xshift=1.1cm, yshift=-.1cm](a) {};
+	\node[above of=a](b) {};
+	\node[right of=b, yshift=-.4cm, xshift=-.5cm] {\usebeamerfont{footline}\color{gray}\insertpagenumber};
+	\draw[-, color=lukeorange, line width=1pt] (a) -- (b);
+	\end{tikzpicture}    
+\else{}
+\fi
+\end{beamercolorbox}
+}
+
+
+%... Fonts --
+\usepackage{helvet}
+
+\mode<presentation>
+% eof
+
