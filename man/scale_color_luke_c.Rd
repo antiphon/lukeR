@@ -4,9 +4,19 @@
 \alias{scale_color_luke_c}
 \title{GG Continuous Scale}
 \usage{
-scale_color_luke_c(..., alpha = 1, begin = 0, end = 1,
-  direction = 1, option = "D", values = NULL, space = "Lab",
-  na.value = "grey50", guide = "colourbar", aesthetics = "colour")
+scale_color_luke_c(
+  ...,
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  option = "D",
+  values = NULL,
+  space = "Lab",
+  na.value = "grey50",
+  guide = "colourbar",
+  aesthetics = "colour"
+)
 }
 \description{
 GG Continuous Scale

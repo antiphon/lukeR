@@ -4,8 +4,7 @@
 \alias{luke_colours}
 \title{Luke Colours}
 \usage{
-luke_colours(format = "web", naming = "informal", program = NULL,
-  ...)
+luke_colours(format = "web", naming = "informal", program = NULL, ...)
 }
 \arguments{
 \item{format}{Return the colors in format: web, rgb, or hsv}

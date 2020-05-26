@@ -4,8 +4,14 @@
 \alias{scale_color_luke_d}
 \title{GG Discrete Scale}
 \usage{
-scale_color_luke_d(..., alpha = 1, begin = 0.25, end = 0.78,
-  direction = 1, aesthetics = "colour")
+scale_color_luke_d(
+  ...,
+  alpha = 1,
+  begin = 0.25,
+  end = 0.78,
+  direction = 1,
+  aesthetics = "colour"
+)
 }
 \description{
 GG Discrete Scale

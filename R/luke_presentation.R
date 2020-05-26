@@ -12,7 +12,6 @@
 #' 
 #' 
 #' @export
-
 luke_presentation <- function(path =".", type = "pp", lang = "en", ask = TRUE) {
   if(!lang %in% c("fi", "en", "se")) stop("'lang' should be one of 'en', 'fi', 'se'.")
   if(! dir.exists(path) ) {

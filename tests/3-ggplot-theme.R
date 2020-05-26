@@ -4,14 +4,14 @@ devtools::load_all()
 library(ggplot2)
 library(dplyr)
 # 
-if(0) {
+if(1) {
   # basic point plots
   n <- 100; p <- 4
   d <- data.frame( x = 1:n, y = rnorm(n*p), z = rep(as.character(1:p), each=n) )
   p1 <- d %>% ggplot(aes(x,y, colour = z)) + geom_point()  + ggtitle("Pisteitä joo") + scale_color_luke_d()
   gridExtra::grid.arrange(p1, p1+theme_luke())
 }
-if(1) {
+if(0) {
   # boxplots
   n <- 100; p <- 4
   d <- data.frame( x = 1:n, y = rnorm(n*p), z = rep(as.character(1:p), each=n) )

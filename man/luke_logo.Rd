@@ -4,9 +4,16 @@
 \alias{luke_logo}
 \title{Luke Logo in Colors}
 \usage{
-luke_logo(bg = "#ffffff", bubble = "#00b5e2", luke = "#ff8200",
-  text = "#3d3b3c", bg_opacity = 1, lang = "fi",
-  file = "luke_logo.png", ...)
+luke_logo(
+  bg = "#ffffff",
+  bubble = "#00b5e2",
+  luke = "#ff8200",
+  text = "#3d3b3c",
+  bg_opacity = 1,
+  lang = "fi",
+  file = "luke_logo.png",
+  ...
+)
 }
 \arguments{
 \item{bg}{color for background}

@@ -44,12 +44,17 @@ luke_colours <- function(format = "web", naming = "informal", program = NULL, ..
 
 # RGB map that follows Luke's graphical guide
 luke.color.map <- {
-  cc <- t( luke_colours(format = "rgb") )
-  cc <- rbind( cc[c(4, 2, 1), ], 
-               c(255,220,130)) /255
-  vec <- rgb(cc[,1],cc[,2],cc[,3])
-  v <- col2rgb( colorRampPalette( vec )(256) )
+  cc <- t( luke_colours(format = "rgb") )[c(4, 2, 1), ]
+  cc <- cc/255
+  vec <- rgb(cc[,1], cc[,2], cc[,3])
+  v <- col2rgb( colorRampPalette( vec , space = "Lab")(256) )
   e <- data.frame(t(v))/255
+  
+  # interpolate in HSV space
+  #cc <- t( luke_colours(format = "hsv") )[c(4, 2, 1), ]
+  #x <- 
+  #n <- 256
+  
   names(e) <- c("R","G","B")
   e
 }
@@ -89,7 +94,18 @@ scale_color_luke_d <- function (..., alpha = 1, begin = .3, end = .7, direction 
 #' GG Fill Scale
 #' 
 #' @export
-scale_fill_luke <- function(...) scale_color_luke_d(..., aesthetics = "fill")
+scale_fill_luke_d <- function(...) {
+  scale_color_luke_d(..., aesthetics = "fill")
+}
+
+#' GG Fill Scale
+#' 
+#' @export
+scale_fill_luke_c <- function(...) {
+  scale_color_luke_c(..., aesthetics = "fill")
+}
+
+
 
 
 #' GG Continuous Scale
