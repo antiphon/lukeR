@@ -1,33 +1,33 @@
 # lukeR
 
-R package for Luke-related themes and templates.
+R package for Luke-related database-wrappers, color-themes and templates.
 
 
 ## Planned features
 
 ### Themes
 
-* ggplot 
+* [] ggplot 
     * geoms: line, ribbon, bar, histogram, raster, smooth etc
     * scale_fill_gradient
     * scale_fill_gradient2
     * scale_fill_continous
     * scale_fill_discrete
     * facet_grid wrap
-* raster, rasterViz, spplot
-* Shiny app css
-* R-markdown document css 
-* flexdashboard css
+* [] raster, rasterViz, spplot ?
+* [] Shiny app css
+* [] R-markdown document css 
+* [] flexdashboard css
 
 
 ### Graphical elements
 
 * Color palettes: 
-   * ~~main~~
-   *  fades
-   *  sets for plots 
-* ~~typeface names~~
-* ~~Luke logo with adjustable colors~~
+   * [x] main
+   * [] fades
+   * [] sets for plots 
+* [x] typeface names
+* [x] Luke logo with adjustable colors
     * background
     * title
     * bubble
@@ -36,16 +36,18 @@ R package for Luke-related themes and templates.
 
 ### Templates
 
-* Powerpoint presentation
-    * official
-* LaTeX Beamer presentation
-    * need to make one
+* [] Powerpoint presentation (latest!)
+* [x] LaTeX Beamer presentation
 
 ### Guides
 
-* Official graphical guide
-* Rmd example of plots
+* [] Official graphical guide
+* [] Rmd example of plots
 
 
+### Database code
 
-
+* [] Weather data, internal databases
+  * [] rasters
+  * [] 
+* [] External databases? (better upload to `geofi`?)

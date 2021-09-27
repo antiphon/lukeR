@@ -13,18 +13,18 @@ names(luke.color.map) <- c("R","G","B")
 # check mapping
 begin <- 0; end<-1;n<-256; alpha <- 1
 mapig <- function(map){
-map_cols <- grDevices::rgb(map$R, map$G, map$B)
-fn_cols <- grDevices::colorRamp(map_cols, space = "Lab", 
-                                interpolate = "spline")
-cols <- fn_cols(seq(begin, end, length.out = n))/255
-grDevices::rgb(cols[, 1], cols[, 2], cols[, 3], alpha = alpha)
+  map_cols <- grDevices::rgb(map$R, map$G, map$B)
+  fn_cols <- grDevices::colorRamp(map_cols, space = "Lab", 
+                                  interpolate = "spline")
+  cols <- fn_cols(seq(begin, end, length.out = n))/255
+  grDevices::rgb(cols[, 1], cols[, 2], cols[, 3], alpha = alpha)
 }
 z <- mapig(luke.color.map)
 z_vir <- mapig(viridisLite::viridis.map[viridisLite::viridis.map$opt =="D",])
 
 
+x <- seq_along(z) * 0
 
+plot(seq_along(z), x+1, pch=19, col = z, ylim = c(-1,2))
 
-plot(seq_along(z), pch=19, col = z)
-
-points(seq_along(z)-2, seq_along(z)+7, pch = 19, col = z_vir)
+points(seq_along(z), x, pch = 19, col = z_vir)

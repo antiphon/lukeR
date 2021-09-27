@@ -75,3 +75,7 @@ ggplot(data.frame(x = rnorm(10000), y = rnorm(10000)), aes(x = x, y = y)) +
   scale_fill_luke_c() + theme_bw()
 }
 
+#
+if(0){
+  image(volcano, col = luke_pal(direction = -1)(12))
+}
