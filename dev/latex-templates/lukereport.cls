@@ -6,6 +6,16 @@
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
 
+
+% COLORS
+\definecolor{lukeblue}{RGB}{0,181,226}
+\definecolor{lukeorange}{RGB}{255,130,0}
+\definecolor{lukedarkgray}{RGB}{84,88,90}
+\definecolor{lukedarkblue}{RGB}{0,51,160}
+\definecolor{lukefuchsia}{RGB}{225,60,152}
+\definecolor{lukegreen}{RGB}{120,190,32}
+\definecolor{lukeviolet}{RGB}{127,63,152}
+
 % A4 paper
 \setlength{\paperheight}{297mm}%
 \setlength{\paperwidth}{210mm}
@@ -40,7 +50,16 @@
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
 
-% Remove the "Chapter x" from chapters
+
+% Title, section head colors
 \RequirePackage{titlesec}
-\titleformat{\chapter}[hang]{\normalfont\bfseries\Huge}{\thechapter. 
-}{10pt}{}
+\titleformat*{\section}{\color{lukedarkgray}}
+%\titleformat*{\subsection}{\color{lukedarkgray}}
+% Remove the "Chapter x" from chapters
+\titleformat{\chapter}[hang]{\color{lukedarkgray}\normalfont\bfseries\Huge}
+				{\thechapter.}
+				{10pt}
+				{\color{lukedarkgray}}
+
+
+

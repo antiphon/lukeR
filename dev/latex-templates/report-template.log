@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.9.29)  30 SEP 2021 08:43
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.9.29)  30 SEP 2021 10:46
  restricted system commands enabled.
 **report-template.tex
 (./report-template.tex
@@ -441,27 +441,27 @@ warning  (pdfe): invalid 10 0 R offset 3099
 warning  (pdfe): invalid 11 0 R offset 5826
 
 warning  (pdfe): invalid 12 0 R offset 5908
->] [2]
+>]
 Chapter 2.
-[3
+[2
 
 ] (./report-template.aux))
 
 Here is how much of LuaTeX's memory you used:
- 5681 strings out of 481365
+ 5672 strings out of 481365
  100000,794899 words of node,token memory allocated
  431 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 53 glue_spec,
  4 attribute_list, 1 write nodes
-   avail lists: 2:142,3:50,4:17,5:46,6:9,7:2910,8:2,9:67,10:10,11:211
- 22592 multiletter control sequences out of 65536+600000
- 52 fonts using 4920011 bytes
- 51i,11n,74p,263b,307s stack positions out of 5000i,500n,10000p,200000b,100000s
+   avail lists: 2:144,3:50,4:22,5:35,6:9,7:2909,8:2,9:67,10:10,11:211
+ 22595 multiletter control sequences out of 65536+600000
+ 48 fonts using 4693387 bytes
+ 51i,6n,74p,263b,245s stack positions out of 5000i,500n,10000p,200000b,100000s
 <./selawkb.ttf><./selawk/selawk.ttf>
-Output written on report-template.pdf (5 pages, 26988 bytes).
+Output written on report-template.pdf (4 pages, 26351 bytes).
 
-PDF statistics: 39 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+PDF statistics: 36 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
