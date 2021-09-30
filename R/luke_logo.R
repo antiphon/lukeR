@@ -14,7 +14,7 @@
 #' 
 #' 'file' should end in desired format, e.g. "my_luke_logo.png" to have a png-image as output. 
 #' Supported formats are 'pdf', 'svg' and 'png'.  
-#' @import XML 
+#' @import XML rsvg
 #' @export
 
 
