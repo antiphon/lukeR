@@ -27,6 +27,7 @@
 \RequirePackage{fontspec}
 \setmainfont[BoldFont=selawkb.ttf]{selawk.ttf}
 %\setsansfont[Ligatures=TeX]{Arial Narrow}
+\setsansfont[Ligatures=TeX]{Arial Narrow}
 
 %% In case not English
 \DeclareOption{finnish}{
@@ -42,14 +43,14 @@
 \ProcessOptions\relax
 
 
-% headers and footers
+% Headers and footers
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyhead[C]{\color{lukedarkgray}\small{\bf[Natural resources and bioeconomy  
+\fancyhead[C]{\color{gray}\small{\bf[Natural resources and bioeconomy  
 studies XX/20XX]}}
 \fancypagestyle{plain}{%
 	\fancyhf{}%
-	\fancyhead[C]{\color{lukedarkgray}\small{\bf[Natural resources and 
+	\fancyhead[C]{\color{gray}\small{\bf[Natural resources and 
 	bioeconomy studies XX/20XX]}}
 	\fancyfoot[C]{\thepage}%
 }
@@ -60,13 +61,27 @@ studies XX/20XX]}}
 
 % Title, section head colors
 \RequirePackage{titlesec}
-\titleformat*{\section}{\color{black}\Large\bf}
+\titleformat*{\section}{\color{black}\LARGE\bf}
+\titleformat*{\subsection}{\color{black}\large\bf}
 %\titleformat*{\subsection}{\color{lukedarkgray}}
 % Remove the "Chapter x" from chapters
-\titleformat{\chapter}[hang]{\color{lukedarkgray}\normalfont\bfseries\Huge}
+\titleformat{\chapter}[hang]{\color{lukedarkgray}\normalfont\bfseries\huge}
 				{\thechapter.}
 				{10pt}
 				{\color{lukedarkgray}}
+				
+\titlelabel{\thetitle.}
+				
+%\titlespacing{\chapter}{0pt}{\parskip}{-\parskip}
+\titlespacing{\chapter}{0pt}{0pt plus 4pt minus 2pt}{10pt plus 2pt minus 2pt}
+\titlespacing{\section}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+\titlespacing{\subsubsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+
+% no intent anywhere
+\setlength\parindent{0pt}
+
 
 % Table header coloring hack
 \makeatletter
@@ -83,3 +98,8 @@ studies XX/20XX]}}
 }
 \makeatother
 
+\renewcommand{\thetable}{\arabic{table}}
+
+% Figures:
+% define figure numbering:
+\renewcommand{\thefigure}{\arabic{figure}}
