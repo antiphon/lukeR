@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {1}Heading 1}{2}%
+\contentsline {section}{\numberline {1.1}Heading 2 (TOC included)}{2}%
+\contentsline {subsection}{\numberline {1.1.1}Heading 3 (TOC included)}{2}%
+\contentsline {subsubsection}{Heading 4 (TOC not included)}{2}%
