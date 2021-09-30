@@ -7,7 +7,7 @@
 %%%
 
 %% dev, to be moved to class-file
-\usepackage{multirow, tabularx}
+\usepackage{tabu}
 
 % Title Page
 \title{Report title to be written here}
@@ -64,32 +64,32 @@
 \lipsum[4]
 
 \subsubsection{Heading 4 (TOC not included)}
-\lipsum[6]
+\lipsum[6] See table \ref{tab:basic}.
 
 
+ \begin{table}
+ 	\centering
+ 	\caption{Example of a basic table.}
+ 	\label{tab:basic}
+ 	
+	\def\arraystretch{1.5} % bit more space
+	\rowcolors{2}{black!5!white}{white}  % alternating colors
+ 	\begin{tabular}{|=l|+c|+c|+c|+c|} % hack to get only first row text white
+ 		\hline
+ 		\rowcolor{lukedarkgray}\rowstyle{\color{white}}
+     & Column 1 & Column 2 & Column 3 & Column 4 \\
+ 		\hline
+ 		Row 1 & 1 & 2 & 3 & 4\\
+ 		\hline
+ 		Row 2 & 1 & 2 & 3 & 4\\
+ 		\hline
+ 		Row 3 & 1 & 2 & 3 & 4\\
+ 		\hline
+ 		Row 4 & 1 & 2 & 3 & 4\\
+ 		\hline
+ 	\end{tabular} 	
 
-% \begin{table}
-% 	\label{tab:basic}\caption{Basic table.}
-% 	
-% 	\begin{tabularx}{\textwidth}{l|c|c|c|c|}
-% 		\hline
-% 		\multirow{2}{*}{Mäkinen ym. (2006), ensiharvennus} &  
-% 		\multicolumn{2}{c}{Mänty}  &  \multicolumn{2}{c}{Kuusi} \\
-% 		%\hline
-% 		&  Valikoiva harvennus& Käytävä\-harvennus  &  Valikoiva harvennus & 
-% 		Käytävä\-harvennus\\
-% 		\hline
-% Kokonaispuuusto\footnote{footnote 1}, $m^3/ha$		&  &  &  &\\
-% 		\hline
-% Kuitupuu		&  &  &  &\\
-% 		\hline
-% Yhteensä		&  &  &  &\\
-% 		\hline
-% Keskimääräinen tilavuuskasvu, $m^3/ha/v$		&  &  &  & \\
-% 		\hline
-% 	\end{tabularx}
-% 	
-% \end{table}
+\end{table}
 
 
 

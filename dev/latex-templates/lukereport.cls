@@ -3,7 +3,7 @@
 
 \LoadClass{report}
 
-\RequirePackage{xcolor}
+\RequirePackage[table]{xcolor} 
 \RequirePackage{graphicx}
 
 
@@ -61,5 +61,18 @@
 				{10pt}
 				{\color{lukedarkgray}}
 
-
+% Table header coloring hack
+\makeatletter
+\newcommand*{\@rowstyle}{}
+\newcommand*{\rowstyle}[1]{% sets the style of the next row
+	\gdef\@rowstyle{#1}%
+	\@rowstyle\ignorespaces%
+}
+\newcolumntype{+}{% adds the current row style to the next column
+	>{\@rowstyle}%
+}
+\newcolumntype{=}{% resets the row style
+	>{\gdef\@rowstyle{}}%
+}
+\makeatother
 
