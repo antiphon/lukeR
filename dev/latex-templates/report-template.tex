@@ -7,7 +7,7 @@
 %%%
 
 %% dev, to be moved to class-file
-\usepackage{tabu}
+\usepackage[singlelinecheck=false]{caption}
 
 % Title Page
 \title{Report title to be written here}
@@ -39,6 +39,7 @@
 
 \subsection{Heading 3 (TOC included)}
 \begin{figure}[!hb]
+	\centering
 	\includegraphics[width=.8\linewidth]{fig_ex1}
 	\caption[short figure caption]{Long figure caption.}
 	\label{fig:figex1}
@@ -68,15 +69,15 @@
 
 
  \begin{table}
- 	\centering
  	\caption{Example of a basic table.}
  	\label{tab:basic}
+% 	\centering
  	
 	\def\arraystretch{1.5} % bit more space
 	\rowcolors{2}{black!5!white}{white}  % alternating colors
  	\begin{tabular}{|=l|+c|+c|+c|+c|} % hack to get only first row text white
  		\hline
- 		\rowcolor{lukedarkgray}\rowstyle{\color{white}}
+ 		\rowcolor{lukedarkgray}\rowstyle{\color{white}\bf}
      & Column 1 & Column 2 & Column 3 & Column 4 \\
  		\hline
  		Row 1 & 1 & 2 & 3 & 4\\

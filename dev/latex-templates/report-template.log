@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.9.29)  30 SEP 2021 11:30
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.9.29)  30 SEP 2021 12:27
  restricted system commands enabled.
 **report-template.tex
 (./report-template.tex
@@ -256,39 +256,23 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed) + interm
-ediate FMi
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box49
-\sift@deathcycles=\count192
-\@vwid@loff=\dimen155
-\@vwid@roff=\dimen156
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen155
+\captionmargin@=\dimen156
+\captionwidth=\dimen157
+\caption@tempdima=\dimen158
+\caption@indent=\dimen159
+\caption@parindent=\dimen160
+\caption@hangindent=\dimen161
+Package caption Info: Standard document class detected.
 )
-\c@taburow=\count193
-\tabu@nbcols=\count194
-\tabu@cnt=\count195
-\tabu@Xcol=\count196
-\tabu@alloc=\count197
-\tabu@nested=\count198
-\tabu@target=\dimen157
-\tabu@spreadtarget=\dimen158
-\tabu@naturalX=\dimen159
-\tabucolX=\dimen160
-\tabu@Xsum=\dimen161
-\extrarowdepth=\dimen162
-\abovetabulinesep=\dimen163
-\belowtabulinesep=\dimen164
-\tabustrutrule=\dimen165
-\tabu@thebody=\toks19
-\tabu@footnotes=\toks20
-\tabu@box=\box50
-\tabu@arstrutbox=\box51
-\tabu@hleads=\box52
-\tabu@vleads=\box53
-\tabu@cellskip=\skip63
+\c@caption@flags=\count192
+\c@continuedfloat=\count193
 )
 (./report-template.aux)
 \openout1 = report-template.aux
@@ -316,17 +300,17 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count199
-\scratchdimen=\dimen166
-\scratchbox=\box54
-\nofMPsegments=\count266
-\nofMParguments=\count267
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count268
-\MPscratchDim=\dimen167
-\MPnumerator=\count269
-\makeMPintoPDFobject=\count270
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count194
+\scratchdimen=\dimen162
+\scratchbox=\box49
+\nofMPsegments=\count195
+\nofMParguments=\count196
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count197
+\MPscratchDim=\dimen163
+\MPnumerator=\count198
+\makeMPintoPDFobject=\count199
+\everyMPtoPDFconversion=\toks20
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
@@ -431,6 +415,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 18.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -441,51 +427,35 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1]
 Chapter 1.
-
-warning  (file fig_ex1.pdf) (pdfe): invalid 9 0 R offset 3018
-
-warning  (file fig_ex1.pdf) (pdfe): invalid 10 0 R offset 3099
-
-warning  (file fig_ex1.pdf) (pdfe): invalid 11 0 R offset 5826
-
-warning  (file fig_ex1.pdf) (pdfe): invalid 12 0 R offset 5908
-<fig_ex1.pdf, id=11, 650.43pt x 289.08pt>
+<fig_ex1.pdf, id=11, 505.89pt x 216.81pt>
 File: fig_ex1.pdf Graphic file (type pdf)
 <use fig_ex1.pdf>
-Package luatex.def Info: fig_ex1.pdf  used on input line 42.
-(luatex.def)             Requested size: 364.68883pt x 162.0866pt.
+Package luatex.def Info: fig_ex1.pdf  used on input line 43.
+(luatex.def)             Requested size: 364.68883pt x 156.29826pt.
 [1
 
-<./fig_ex1.pdf
-warning  (pdfe): invalid 9 0 R offset 3018
-
-warning  (pdfe): invalid 10 0 R offset 3099
-
-warning  (pdfe): invalid 11 0 R offset 5826
-
-warning  (pdfe): invalid 12 0 R offset 5908
->]
+<./fig_ex1.pdf>]
 Chapter 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 77.
+(Font)              <7> on input line 78.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 77.
+(Font)              <5> on input line 78.
 [2
 
 ] (./report-template.aux))
 
 Here is how much of LuaTeX's memory you used:
- 6363 strings out of 481365
+ 6765 strings out of 481365
  100000,794899 words of node,token memory allocated
  436 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 54 glue_spec,
  4 attribute_list, 1 write nodes
-   avail lists: 2:389,3:50,4:80,5:97,6:10,7:3163,8:2,9:182,10:10,11:217
- 23262 multiletter control sequences out of 65536+600000
- 59 fonts using 5366667 bytes
- 51i,9n,74p,263b,245s stack positions out of 5000i,500n,10000p,200000b,100000s
+   avail lists: 2:405,3:55,4:80,5:97,6:12,7:3166,8:2,9:188,10:10,11:217
+ 23658 multiletter control sequences out of 65536+600000
+ 61 fonts using 5479979 bytes
+ 51i,9n,74p,263b,275s stack positions out of 5000i,500n,10000p,200000b,100000s
 <./selawkb.ttf><./selawk/selawk.ttf>
-Output written on report-template.pdf (4 pages, 27186 bytes).
+Output written on report-template.pdf (4 pages, 27688 bytes).
 
 PDF statistics: 36 PDF objects out of 1000 (max. 8388607)
  21 compressed objects within 1 object stream

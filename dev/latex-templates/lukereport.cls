@@ -53,7 +53,7 @@
 
 % Title, section head colors
 \RequirePackage{titlesec}
-\titleformat*{\section}{\color{lukedarkgray}}
+\titleformat*{\section}{\color{black}\Large\bf}
 %\titleformat*{\subsection}{\color{lukedarkgray}}
 % Remove the "Chapter x" from chapters
 \titleformat{\chapter}[hang]{\color{lukedarkgray}\normalfont\bfseries\Huge}
