@@ -21,12 +21,12 @@
 \setlength{\paperwidth}{210mm}
 
 % Margins
-\RequirePackage[left=0.98in, right=0.98in, top=0.55in,bottom=0.55in]{geometry}
+\RequirePackage[left=0.98in, right=0.98in, top=1in,bottom=1in]{geometry}
 
 % Fonts
 \RequirePackage{fontspec}
 \setmainfont[BoldFont=selawkb.ttf]{selawk.ttf}
-
+%\setsansfont[Ligatures=TeX]{Arial Narrow}
 
 %% In case not English
 \DeclareOption{finnish}{
@@ -45,8 +45,15 @@
 % headers and footers
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyhead[C]{\small{\bf[Natural resources and bioeconomy studies XX/20XX]}}
-\fancyfoot[C]{}
+\fancyhead[C]{\color{lukedarkgray}\small{\bf[Natural resources and bioeconomy  
+studies XX/20XX]}}
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\fancyhead[C]{\color{lukedarkgray}\small{\bf[Natural resources and 
+	bioeconomy studies XX/20XX]}}
+	\fancyfoot[C]{\thepage}%
+}
+%\fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
 

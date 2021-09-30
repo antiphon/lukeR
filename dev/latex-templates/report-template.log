@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.9.29)  30 SEP 2021 12:27
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.9.29)  30 SEP 2021 12:47
  restricted system commands enabled.
 **report-template.tex
 (./report-template.tex
@@ -329,14 +329,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(70.82428pt, 455.85931pt, 70.82428pt)
-* v-part:(T,H,B)=(39.74872pt, 765.54941pt, 39.74872pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=455.85931pt
-* \textheight=765.54941pt
+* \textheight=700.50687pt
 * \oddsidemargin=-1.44571pt
 * \evensidemargin=-1.44571pt
-* \topmargin=-69.52127pt
+* \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -434,31 +434,45 @@ Package luatex.def Info: fig_ex1.pdf  used on input line 43.
 (luatex.def)             Requested size: 364.68883pt x 156.29826pt.
 [1
 
-<./fig_ex1.pdf>]
+<./fig_ex1.pdf>] [2]
 Chapter 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 78.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 78.
-[2
+[3
 
-] (./report-template.aux))
+]
+LaTeX Font Info:    Trying to load font information for TU+phv on input line 75.
+
+LaTeX Font Info:    No file TUphv.fd. on input line 75.
+
+
+LaTeX Font Warning: Font shape `TU/phv/c/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 75.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 79.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 79.
+[4] (./report-template.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+)
 
 Here is how much of LuaTeX's memory you used:
- 6765 strings out of 481365
+ 6784 strings out of 481365
  100000,794899 words of node,token memory allocated
  436 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 54 glue_spec,
  4 attribute_list, 1 write nodes
-   avail lists: 2:405,3:55,4:80,5:97,6:12,7:3166,8:2,9:188,10:10,11:217
- 23658 multiletter control sequences out of 65536+600000
- 61 fonts using 5479979 bytes
- 51i,9n,74p,263b,275s stack positions out of 5000i,500n,10000p,200000b,100000s
-<./selawkb.ttf><./selawk/selawk.ttf>
-Output written on report-template.pdf (4 pages, 27688 bytes).
+   avail lists: 2:362,3:60,4:72,5:120,6:17,7:4482,8:2,9:185,10:10,11:327
+ 23667 multiletter control sequences out of 65536+600000
+ 63 fonts using 5593355 bytes
+ 51i,11n,74p,263b,390s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/share/texmf/fonts/opentype/public/lm/lmroman10-regular.otf><./selawkb.ttf>
+<./selawk/selawk.ttf>
+Output written on report-template.pdf (6 pages, 33191 bytes).
 
-PDF statistics: 36 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+PDF statistics: 49 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
