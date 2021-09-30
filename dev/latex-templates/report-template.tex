@@ -7,7 +7,13 @@
 %%%
 
 %% dev, to be moved to class-file
-\usepackage[singlelinecheck=false]{caption}
+\usepackage[singlelinecheck=false, labelsep=period, labelfont=bf]{caption}
+\usepackage{tocloft} % adds toc dots
+\renewcommand\cftchapaftersnum{.}% adds dot after chapter title in ToC
+\renewcommand\cftchapdotsep{\cftdotsep}% adds leader dots from chapter titles to page numbers
+
+% row space
+\linespread{1.1}
 
 % Title Page
 \title{Report title to be written here}
@@ -23,8 +29,10 @@
 \end{abstract}
 
 %\newpage
-\setcounter{tocdepth}{2}
-%\tableofcontents
+\setcounter{tocdepth}{0}
+
+
+\tableofcontents
 
 %\newpage
 
