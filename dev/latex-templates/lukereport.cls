@@ -81,7 +81,18 @@ studies XX/20XX]}}
 
 % no intent anywhere
 \setlength\parindent{0pt}
+% paragraph spacing
+\setlength{\parskip}{1em}
 
+
+% Figures:
+% define figure numbering:
+\renewcommand{\thefigure}{\arabic{figure}}
+
+
+% Tables
+% Numbering:
+\renewcommand{\thetable}{\arabic{table}}
 
 % Table header coloring hack
 \makeatletter
@@ -98,8 +109,4 @@ studies XX/20XX]}}
 }
 \makeatother
 
-\renewcommand{\thetable}{\arabic{table}}
 
-% Figures:
-% define figure numbering:
-\renewcommand{\thefigure}{\arabic{figure}}
