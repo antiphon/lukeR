@@ -52,7 +52,7 @@ studies XX/20XX]}}
 	\fancyhf{}%
 	\fancyhead[C]{\color{gray}\small{\bf[Natural resources and 
 	bioeconomy studies XX/20XX]}}
-	\fancyfoot[C]{\thepage}%
+	\fancyfoot[C]{\color{gray}\small{\bf\thepage}}%
 }
 %\fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0pt}
