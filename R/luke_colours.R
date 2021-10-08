@@ -54,6 +54,22 @@ luke.color.map <- {
   #cc <- t( luke_colours(format = "hsv") )[c(4, 2, 1), ]
   #x <- 
   #n <- 256
+
+  names(e) <- c("R","G","B")
+  e
+}
+
+luke.color.map.all <- {
+  cc <- t( luke_colours(format = "rgb") )
+  cc <- cc/255
+  vec <- rgb(cc[,1], cc[,2], cc[,3])
+  v <- col2rgb( colorRampPalette( vec , space = "Lab")(256) )
+  e <- data.frame(t(v))/255
+  
+  # interpolate in HSV space
+  #cc <- t( luke_colours(format = "hsv") )[c(4, 2, 1), ]
+  #x <- 
+  #n <- 256
   
   names(e) <- c("R","G","B")
   e
@@ -62,8 +78,20 @@ luke.color.map <- {
 
 #' Luke Color Palette Function
 #' 
+#' Gives a required amount of colors near the official Luke-palette
+#' 
+#' @param alpha alpha
+#' @param begin start level
+#' @param end end 
+#' @param direction 1 or -1
+#' @param option A=darkblue blue orange B=all
+#' @param iwh I want Hue! Make the neighbouring colors more distinct
+#' 
+#' @importFrom grDevices rgb colorRamp
 #' @export
-luke_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1, option = "D") {
+luke_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1, 
+                     option = "A", 
+                     iwh = FALSE) {
   function(n) {
     if (begin < 0 | begin > 1 | end < 0 | end > 1) {
       stop("begin and end must be in [0,1]")
@@ -76,88 +104,34 @@ luke_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1, option = "D")
       begin <- end
       end <- tmp
     }
-    map <- luke.color.map
+    #browser()
+    map <- if(option=="A") luke.color.map else luke.color.map.all
     map_cols <- grDevices::rgb(map$R, map$G, map$B)
-    fn_cols <- grDevices::colorRamp(map_cols, space = "Lab", 
-                                    interpolate = "spline")
+    fn_cols  <- grDevices::colorRamp(map_cols, space = "Lab", 
+                                     interpolate = "spline")
     cols <- fn_cols( seq(begin, end, length.out = n) )/255
-    grDevices::rgb(cols[, 1], cols[, 2], cols[, 3], alpha = alpha)
+    #
+    # reorder to maximize contrast?
+    if(iwh & n > 1) {
+      lab <- convertColor(cols, from = "sRGB", to = "Lab", to.ref.white = "D65")
+      #return(cols)
+      deltaE <- as.matrix( dist(lab) )
+      # go stepwise maximum difference
+      o1 <- 1
+      last <- 1
+      left <- 2:n
+      while(length(left)){
+        doj <- deltaE[last, left]
+        j <- left[ji <- which.max(doj)]
+        o1 <- c(o1, j)
+        left <- left[-ji]
+        last <- j
+      }
+      cols <- cols[o1,, drop=FALSE]
+    }
+    #
+    #
+    out <- grDevices::rgb(cols[, 1], cols[, 2], cols[, 3], alpha = alpha)
+    
   }
 }
-#' GG Discrete Scale
-#' 
-#' @export
-scale_color_luke_d <- function (..., alpha = 1, begin = .3, end = .7, direction = 1, 
-                              option = "D", aesthetics = "colour") {
-  discrete_scale(aesthetics, "luke", luke_pal(alpha, begin, end, direction, option), ...)
-}
-#' GG Fill Scale
-#' 
-#' @export
-scale_fill_luke_d <- function(...) {
-  scale_color_luke_d(..., aesthetics = "fill")
-}
-
-#' GG Fill Scale
-#' 
-#' @export
-scale_fill_luke_c <- function(...) {
-  scale_color_luke_c(..., aesthetics = "fill")
-}
-
-
-
-
-#' GG Continuous Scale
-#' 
-#' @export
-scale_color_luke_c <- function(..., alpha = 1, begin = 0, end = 1, direction = 1, 
-                               option = "D", values = NULL, space = "Lab", na.value = "grey50", 
-                               guide = "colourbar", aesthetics = "colour") {
-  continuous_scale(aesthetics, "luke_c", 
-                   scales::gradient_n_pal(luke_pal(alpha, begin, end, direction)(6), values, space), na.value = na.value, 
-                   guide = guide, ...)
-}
-
-
-#' GG Theme
-#' 
-#' @export
-theme_luke <- function () { 
-  theme_bw(base_size=12, base_family="Arial") %+replace% 
-    theme(
-      panel.background  = element_blank(),
-      #plot.background = element_rect(fill="white", colour=NA), 
-      #legend.background = element_rect(fill="transparent", colour=NA),
-      legend.key = element_rect(fill="transparent", colour=NA)
-    )
-}
-
-luke_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1) {
-  function(n) {
-    if (begin < 0 | begin > 1 | end < 0 | end > 1) {
-      stop("begin and end must be in [0,1]")
-    }
-    if (abs(direction) != 1) {
-      stop("direction must be 1 or -1")
-    }
-    if (direction == -1) {
-      tmp <- begin
-      begin <- end
-      end <- tmp
-    }
-    map <- luke.color.map
-    map_cols <- grDevices::rgb(map$R, map$G, map$B)
-    fn_cols <- grDevices::colorRamp(map_cols, space = "Lab", 
-                                    interpolate = "spline")
-    cols <- fn_cols(seq(begin, end, length.out = n))/255
-    grDevices::rgb(cols[, 1], cols[, 2], cols[, 3], alpha = alpha)
-  }
-}
-
-
-scale_color_luke_d <- function (..., alpha = 1, begin = 0.25, end = .78, direction = 1, 
-                                aesthetics = "colour") { 
-  discrete_scale(aesthetics, "luke_d", luke_pal(alpha, begin, end, direction), ...)
-}
-

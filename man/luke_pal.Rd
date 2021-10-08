@@ -4,8 +4,28 @@
 \alias{luke_pal}
 \title{Luke Color Palette Function}
 \usage{
-luke_pal(alpha = 1, begin = 0, end = 1, direction = 1)
+luke_pal(
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  option = "A",
+  iwh = FALSE
+)
+}
+\arguments{
+\item{alpha}{alpha}
+
+\item{begin}{start level}
+
+\item{end}{end}
+
+\item{direction}{1 or -1}
+
+\item{option}{A=darkblue blue orange B=all}
+
+\item{iwh}{I want Hue! Make the neighbouring colors more distinct}
 }
 \description{
-Luke Color Palette Function
+Gives a required amount of colors near the official Luke-palette
 }

@@ -47,6 +47,7 @@ for(coln in names(mains)){
       else dichromat(col, filt)
     p[[paste0(coln, filt)]] <- testplot + scale_fill_manual(values = z)  + 
       #theme_void() +
+      labs(x=NULL, y=NULL) + 
       theme(legend.position="none", plot.title = element_text(hjust=.5)) + 
       ggtitle(paste0(coln, " ", filt))
   }
@@ -71,7 +72,7 @@ if(0){
 if(0){
 library(ggplot2)
 ggplot(data.frame(x = rnorm(10000), y = rnorm(10000)), aes(x = x, y = y)) +
-  geom_hex() + coord_fixed() +
+  geom_hex() + coord_fixed() + labs(x=NULL, y=NULL) + 
   scale_fill_luke_c() + theme_bw()
 }
 

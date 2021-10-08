@@ -20,14 +20,36 @@ library(ggplot2)
 ```
 
 ```{r}
+
+theme_luke <- function () { 
+  theme_bw(base_size=12, base_family="Arial") %+replace% 
+    theme(
+      panel.background  = element_blank(),
+      plot.background = element_rect(fill="white", colour=NA), 
+      legend.background = element_rect(fill="transparent", colour=NA),
+      legend.key = element_rect(fill="transparent", colour=NA),
+      strip.background = element_rect( fill = luke_colours()["orange"], color = NA),
+      strip.text = element_text(family = "Arial",  colour = "white")
+    )
+}
+
+options(ggplot2.)
 x <- data.frame(x = runif(1000), y = runif(1000), m = sample(LETTERS[1:4], 1000, TRUE))
+y <- data.frame(x = rep(1:10, 2), y = runif(20)*5, m = rep(paste("Sarja", 1:2), each = 10))
 
-p <- ggplot(x) + theme_luke() + ggtitle("Title 1", subtitle = "Sub-title 1")
-p + geom_point(aes(x=x, y = y, col = m))
+px  <- ggplot(x) + theme_luke() + ggtitle("Title 1", subtitle = "Sub-title 1")
+py  <- ggplot(y) + theme_luke() + ggtitle("Title 1", subtitle = "Sub-title 1")
+
+
+#update_geom_defaults()
+
+#px + geom_point(aes(x=x, y = y, col = m))
+
+px + geom_histogram(aes(x = x, fill = m)) + facet_wrap(~m) + scale_fill_luke_d()
+
+#py + geom_line(aes(x = x, y = y, col = m))
+
 ```
 
-```{r}
-p + geom_histogram(aes(x = x, fill = m)) + facet_wrap(~m)
-```
 
 
