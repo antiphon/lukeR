@@ -55,8 +55,9 @@
 \setbeamercolor{enumerate item}{fg=black, bg=black}
 
 %... Fonts --
-\usepackage{helvet} % use pdflatex
-
+\usepackage{helvet} % use pdflatex?
+\usepackage{fontspec} % or luatex?
+\setsansfont[BoldFont=selawkb.ttf]{selawk.ttf}
 
 
 
@@ -112,9 +113,10 @@
 	  {\usebeamerfont{footline}\color{lightgray}\textcopyright\ \@luketext};
 	\node[at=(current page.south east), xshift=-1.5cm, yshift=-.1cm](a) {};
 	\node[above of=a, yshift=-.2cm](b) {};
-	\node[right of=b, yshift=-.4cm, xshift=-.5cm] 
-	{\usebeamerfont{footline}\color{gray}\insertframenumber};
-	\node[left of=b, yshift=-.4cm, xshift=-.0cm] 
+	\node[right of=b, yshift=-.25cm, xshift=-.5cm] 
+	{\usebeamerfont{footline}\color{gray}\insertframenumber 
+	 {\color{lightgray}~/\inserttotalframenumber} };
+	\node[left of=b, yshift=-.25cm, xshift=-.0cm] 
 	{\usebeamerfont{footline}\color{gray}\today};
 	\draw[-, color=lukeorange, line width=1pt] (a) -- (b);
 	\end{tikzpicture}    
