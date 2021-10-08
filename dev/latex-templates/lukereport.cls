@@ -52,7 +52,7 @@ studies XX/20XX]}}
 	\fancyhf{}%
 	\fancyhead[C]{\color{gray}\small{\bf[Natural resources and 
 	bioeconomy studies XX/20XX]}}
-	\fancyfoot[C]{\thepage}%
+	\fancyfoot[C]{\color{gray}\small{\bf\thepage}}%
 }
 %\fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0pt}
@@ -81,7 +81,18 @@ studies XX/20XX]}}
 
 % no intent anywhere
 \setlength\parindent{0pt}
+% paragraph spacing
+\setlength{\parskip}{1em}
 
+
+% Figures:
+% define figure numbering:
+\renewcommand{\thefigure}{\arabic{figure}}
+
+
+% Tables
+% Numbering:
+\renewcommand{\thetable}{\arabic{table}}
 
 % Table header coloring hack
 \makeatletter
@@ -98,8 +109,4 @@ studies XX/20XX]}}
 }
 \makeatother
 
-\renewcommand{\thetable}{\arabic{table}}
 
-% Figures:
-% define figure numbering:
-\renewcommand{\thefigure}{\arabic{figure}}

@@ -1,5 +1,5 @@
 % !tex-engine = luatex
-\documentclass{lukereport}
+\documentclass[11pt]{lukereport}
 
 %%%
 % Next packages are for the template examples and can be removed.
@@ -13,7 +13,7 @@
 \renewcommand\cftchapdotsep{\cftdotsep}% adds leader dots from chapter titles to page numbers
 
 % row space
-\linespread{1.1}
+%\linespread{1.1}
 
 % Title Page
 \title{Report title to be written here}
@@ -28,8 +28,12 @@
 \lipsum[2-3]
 \end{abstract}
 
+% if needed:
+\setcounter{page}{5}
+
 %\newpage
 \setcounter{tocdepth}{0}
+
 
 
 \tableofcontents
@@ -84,10 +88,10 @@
  	
 	\def\arraystretch{1.5} % bit more space
 	\rowcolors{2}{black!5!white}{white}  % alternating colors
- 	\begin{tabular}{|=l|+c|+c|+c|+c|} % hack to get only first row text white
+          \begin{tabular}{|=l|+c|+c|+c|+c|} % hack to get only first row text white
  		\hline
  		\rowcolor{lukedarkgray}\rowstyle{\color{white}\bf}
-     & Column 1 & Column 2 & Column 3 & Column 4 \\
+		& Column 1 & Column 2 & Column 3 & Column 4 \\
  		\hline
  		Row 1 & 1 & 2 & 3 & 4\\
  		\hline
