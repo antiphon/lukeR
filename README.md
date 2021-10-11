@@ -52,4 +52,4 @@ R package for Luke-related database-wrappers, color-themes and templates.
 * [ ] Weather data, internal databases
   * [ ] rasters
   * [ ] timeseries
-* [ ] External databases? (better upload to `geofi`?)
+* [ ] External databases, eg MML, FMI, or better upload to `geofi`?
