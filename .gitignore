@@ -9,3 +9,5 @@ Meta
 originals
 dev/*aux
 dev/*toc
+dev/tuomas*
+*.potx

@@ -8,16 +8,17 @@ R package for Luke-related database-wrappers, color-themes and templates.
 ### Themes
 
 * [ ] ggplot (partly done)
-    * geoms: line, ribbon, bar, histogram, raster, smooth etc
-    * scale_fill_gradient
-    * scale_fill_gradient2
-    * scale_fill_continous
-    * scale_fill_discrete
-    * facet_grid wrap
-* [ ] raster, rasterViz, spplot, tmap, leaflet, etc?
-* [ ] Shiny app css
+    * [ ] scale_*_gradient
+    * [ ] scale_*_continous
+    * [ ] scale_*_discrete
+    * [ ] facet_grid wrap
 * [ ] R-markdown document css
+
+Maybe
+
+* [ ] Shiny app css
 * [ ] flexdashboard css
+* [ ] raster, rasterViz, spplot, tmap, leaflet, etc?
 
 
 ### Graphical elements
@@ -37,19 +38,13 @@ R package for Luke-related database-wrappers, color-themes and templates.
 
 ### Templates
 
-* [ ] Powerpoint presentation (latest!)
-* [ ] LaTeX Beamer presentation update
-* [ ] Word-templates for reports
+* [ ] LaTeX Beamer presentation
+* [ ] LaTeX report-template
+
+Office-suite templates are already on Valtti-machines. 
 
 ### Guides
 
 * [ ] Official graphical guide
 * [ ] Rmd example of plots
 
-
-### Database code
-
-* [ ] Weather data, internal databases
-  * [ ] rasters
-  * [ ] timeseries
-* [ ] External databases, eg MML, FMI, or better upload to `geofi`?

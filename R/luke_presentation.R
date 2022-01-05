@@ -3,16 +3,17 @@
 #' Create a presentation template in a desired location.
 #' 
 #' @param path path to location where to create template. Default is current working directory.
-#' @param type Powerpoint ('pp') or LaTeX Beamer ('beamer')
+#' @param type Powerpoint ('pp') (DEPRECATED) or LaTeX Beamer ('beamer')
 #' @param lang 'fi', 'en' or 'se'
 #' @param ask Prompt if new directory is to be created. If FALSE just create it.
 #' @details 
 #' Copies the bare minimum files for a presentation in Luke colours into 'path'. The Beamer 
 #' presentation is an imitation of the official Powerpoint template.
 #' 
+#' Powerpoint templates are no longer provided as they are loaded on Valtti-machines by default.
 #' 
 #' @export
-luke_presentation <- function(path =".", type = "pp", lang = "en", ask = TRUE) {
+luke_presentation <- function(path =".", type = "beamer", lang = "en", ask = TRUE) {
   if(!lang %in% c("fi", "en", "se")) stop("'lang' should be one of 'en', 'fi', 'se'.")
   if(! dir.exists(path) ) {
     a <- if(ask) readline("Path does not exist, create it? [y/n]") else "y"
@@ -20,11 +21,12 @@ luke_presentation <- function(path =".", type = "pp", lang = "en", ask = TRUE) {
       else {message("Canceled.");return()}
   }
   
-  #browser()
+  
   
   type <- c("pp","beamer")[pmatch(type, c("pp", "beamer"))]
   #
   if(type == "pp") {
+    stop("Powerpoint no longer supported.")
     files_in <- paste0("Luke_PP_", toupper(lang), "_basic_4_3.potx")
     files_out <- files_in
   }

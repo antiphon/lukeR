@@ -14,6 +14,12 @@ plot(1:n, rep(1, n), pch=20, cex=2, col=cl)
 luke_colours(program = "SB")
 }
 
+# 
+
+
+
+
+
 
 # IWH!
 
@@ -98,6 +104,13 @@ if(0) {
   library(ggplot2)
   library(dplyr)
   df <- df |> group_by(x) |> mutate(y = y/sum(y))
-  df |> ggplot() + geom_col(aes(x, y, fill = m))  +
-    scale_fill_luke_d(iwh=TRUE, option="B")
+  z <- df |> ggplot() + 
+    geom_col(aes(x, y, fill = m))  +
+    scale_fill_luke(iwh=TRUE, option="A") 
+  print(z)
 }
+
+
+
+
+

@@ -1,8 +1,8 @@
 Package: lukeR
 Type: Package
 Title: Natural Resources Institute Finland alias Luke Themes
-Version: 1.1
-Date: 2021-06-16
+Version: 1.2
+Date: 2022-01-05
 Author: Tuomas Rajala <tuomas.rajala@luke.fi>
 Maintainer: Tuomas Rajala <tuomas.rajala@luke.fi>
 Description: Luke colour palettes, fonts, logos, themes and templates.

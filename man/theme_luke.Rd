@@ -4,7 +4,7 @@
 \alias{theme_luke}
 \title{GG Theme}
 \usage{
-theme_luke()
+theme_luke(family = "sans")
 }
 \description{
 GG Theme

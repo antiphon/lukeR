@@ -4,12 +4,12 @@
 \alias{luke_presentation}
 \title{Templates for Presentations}
 \usage{
-luke_presentation(path = ".", type = "pp", lang = "en", ask = TRUE)
+luke_presentation(path = ".", type = "beamer", lang = "en", ask = TRUE)
 }
 \arguments{
 \item{path}{path to location where to create template. Default is current working directory.}
 
-\item{type}{Powerpoint ('pp') or LaTeX Beamer ('beamer')}
+\item{type}{Powerpoint ('pp') (DEPRECATED) or LaTeX Beamer ('beamer')}
 
 \item{lang}{'fi', 'en' or 'se'}
 
@@ -21,4 +21,6 @@ Create a presentation template in a desired location.
 \details{
 Copies the bare minimum files for a presentation in Luke colours into 'path'. The Beamer 
 presentation is an imitation of the official Powerpoint template.
+
+Powerpoint templates are no longer provided as they are loaded on Valtti-machines by default.
 }

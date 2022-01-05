@@ -49,12 +49,6 @@ luke.color.map <- {
   vec <- rgb(cc[,1], cc[,2], cc[,3])
   v <- col2rgb( colorRampPalette( vec , space = "Lab")(256) )
   e <- data.frame(t(v))/255
-  
-  # interpolate in HSV space
-  #cc <- t( luke_colours(format = "hsv") )[c(4, 2, 1), ]
-  #x <- 
-  #n <- 256
-
   names(e) <- c("R","G","B")
   e
 }
@@ -65,12 +59,6 @@ luke.color.map.all <- {
   vec <- rgb(cc[,1], cc[,2], cc[,3])
   v <- col2rgb( colorRampPalette( vec , space = "Lab")(256) )
   e <- data.frame(t(v))/255
-  
-  # interpolate in HSV space
-  #cc <- t( luke_colours(format = "hsv") )[c(4, 2, 1), ]
-  #x <- 
-  #n <- 256
-  
   names(e) <- c("R","G","B")
   e
 }
@@ -81,8 +69,8 @@ luke.color.map.all <- {
 #' Gives a required amount of colors near the official Luke-palette
 #' 
 #' @param alpha alpha
-#' @param begin start level
-#' @param end end 
+#' @param begin start level. 
+#' @param end end. 
 #' @param direction 1 or -1
 #' @param option A=darkblue blue orange B=all
 #' @param iwh I want Hue! Make the neighbouring colors more distinct
@@ -107,7 +95,8 @@ luke_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1,
     #browser()
     map <- if(option=="A") luke.color.map else luke.color.map.all
     map_cols <- grDevices::rgb(map$R, map$G, map$B)
-    fn_cols  <- grDevices::colorRamp(map_cols, space = "Lab", 
+    fn_cols  <- grDevices::colorRamp(map_cols, 
+                                     space = "Lab", 
                                      interpolate = "spline")
     cols <- fn_cols( seq(begin, end, length.out = n) )/255
     #
@@ -132,6 +121,6 @@ luke_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1,
     #
     #
     out <- grDevices::rgb(cols[, 1], cols[, 2], cols[, 3], alpha = alpha)
-    
+    out
   }
 }

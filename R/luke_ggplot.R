@@ -1,17 +1,20 @@
 #' GG Discrete Scale
 #' 
+#' @param ... passed on to luke_pal
+#' @param aesthetic defaults to "colour"
 #' @export
-scale_color_luke_d <- function (..., alpha = 1, begin = .3, end = .7, direction = 1, 
-                                option = "A", aesthetics = "colour", iwh = FALSE) {
-  discrete_scale(aesthetics, "luke", luke_pal(alpha, begin, end, direction, option, iwh), ...)
+scale_color_luke_d <- function (..., aesthetics = "colour") {
+  discrete_scale(aesthetics, 
+                 "luke", 
+                 luke_pal(...))
 }
 
-# 
-# 
-# scale_color_luke_d <- function (..., alpha = 1, begin = 0.25, end = .78, direction = 1, 
-#                                 aesthetics = "colour") { 
-#   discrete_scale(aesthetics, "luke_d", luke_pal(alpha, begin, end, direction), ...)
-# }
+#' GG default scale
+#' Same as discrete scale.
+#'
+#' @export
+scale_color_luke <- function(...) scale_color_luke_d(...)
+
 
 
 #' GG Fill Scale
@@ -21,6 +24,14 @@ scale_fill_luke_d <- function(...) {
   scale_color_luke_d(..., aesthetics = "fill")
 }
 
+#' GG default fill Scale
+#' 
+#' @export
+scale_fill_luke <- function(...) {
+  scale_fill_luke_d(...)
+}
+
+
 #' GG Fill Scale
 #' 
 #' @export
@@ -28,26 +39,31 @@ scale_fill_luke_c <- function(...) {
   scale_color_luke_c(..., aesthetics = "fill")
 }
 
-
-
-
 #' GG Continuous Scale
 #' 
+#' @param ... passed on to luke_pal
+#' 
+#' @details luke_pal is used for creating 6 colors for interpolation.
 #' @export
-scale_color_luke_c <- function(..., alpha = 1, begin = 0, end = 1, direction = 1, 
-                               option = "A", values = NULL, space = "Lab", na.value = "grey50", 
-                               guide = "colourbar", aesthetics = "colour", iwh = FALSE) {
-  continuous_scale(aesthetics, "luke_c", 
-                   scales::gradient_n_pal(luke_pal(alpha, begin, end, direction, iwh)(6), values, space), na.value = na.value, 
-                   guide = guide, ...)
+scale_color_luke_c <- function(..., 
+                               values = NULL, space = "Lab", 
+                               na.value = "grey50", 
+                               guide = "colourbar", 
+                               aesthetics = "colour", ncolours = 8) {
+  continuous_scale(aesthetics, 
+                   "luke_c", 
+                   scales::gradient_n_pal( luke_pal(...)(ncolours), values, space), 
+                   na.value = na.value, 
+                   guide = guide
+                   )
 }
 
 
 #' GG Theme
 #' 
 #' @export
-theme_luke <- function () { 
-  theme_bw(base_size=12, base_family="Arial") %+replace% 
+theme_luke <- function (family = "sans") { 
+  theme_bw(base_size=12, base_family=family) %+replace% 
     theme(
       panel.background  = element_blank(),
       plot.background = element_rect(fill="white", colour=NA), 

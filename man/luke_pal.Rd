@@ -16,9 +16,9 @@ luke_pal(
 \arguments{
 \item{alpha}{alpha}
 
-\item{begin}{start level}
+\item{begin}{start level.}
 
-\item{end}{end}
+\item{end}{end.}
 
 \item{direction}{1 or -1}
 

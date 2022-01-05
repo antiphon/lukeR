@@ -7,13 +7,16 @@
 scale_color_luke_d(
   ...,
   alpha = 1,
-  begin = 0.3,
-  end = 0.7,
+  begin = 0,
+  end = 1,
   direction = 1,
   option = "A",
   aesthetics = "colour",
   iwh = FALSE
 )
+}
+\arguments{
+\item{iwh}{Should neighbouring colors be maximally different in contrast? (I want hue)}
 }
 \description{
 GG Discrete Scale

@@ -13,8 +13,6 @@
 
 luke_fonts <- function(approx = TRUE, ...) {
   out <- if(approx) "Arial" else "Accura"
-  
   # done
   out
 }
- 
