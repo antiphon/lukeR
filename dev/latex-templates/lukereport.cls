@@ -61,15 +61,23 @@ studies XX/20XX]}}
 
 % Title, section head colors
 \RequirePackage{titlesec}
-\titleformat*{\section}{\color{black}\LARGE\bf}
-\titleformat*{\subsection}{\color{black}\large\bf}
+%\titleformat*{\section}{\color{black}\LARGE\bf}
+%\titleformat*{\subsection}{\color{black}\large\bf}
 %\titleformat*{\subsection}{\color{lukedarkgray}}
 % Remove the "Chapter x" from chapters
 \titleformat{\chapter}[hang]{\color{lukedarkgray}\normalfont\bfseries\huge}
 				{\thechapter.}
 				{10pt}
 				{\color{lukedarkgray}}
-				
+\titleformat{\section}[hang]{\color{black}\normalfont\bfseries\LARGE}
+                {\thesection.}
+                {10pt}
+                {\color{black}}        
+\titleformat{\subsection}[hang]{\color{black}\normalfont\bfseries\large}
+                {\thesubsection.}
+                {10pt}
+                {\color{black}}        				
+
 \titlelabel{\thetitle.}
 				
 %\titlespacing{\chapter}{0pt}{\parskip}{-\parskip}
