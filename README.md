@@ -2,13 +2,31 @@
 
 R package for Luke-related database-wrappers, color-themes and templates.
 
-To install, first install the `remotes` package, and then run inside R one of
+To install this, first install packages 
+
+* `remotes`
+* `XML`
+* `rsvg`
+
+e.g. `install.packages(c("remotes", "XML", "rsvg"))` . Then run inside R one of
 
 ```r
 remotes::install_github("antiphon/lukeR")
 # or with some examples
 remotes::install_github("antiphon/lukeR", build_vignettes = TRUE)
 ```
+If you are connected to Reitti, you might need to adjust your proxy-settings to be able to
+install directly from Github. This can be done by adding the line
+
+```
+Sys.setenv(https_proxy="http://*secret goverment proxy here*")
+```
+
+into your `.Rprofile`  (e.g. using `usethis::edit_r_profile()`)
+
+At the moment you need to ask the proxy address details from e.g. Teams channel "Luke R users" (see wiki therein). 
+
+
 
 
 
