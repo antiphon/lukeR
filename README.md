@@ -2,6 +2,15 @@
 
 R package for Luke-related database-wrappers, color-themes and templates.
 
+To install, first install the `remotes` package, and then run inside R one of
+
+```r
+remotes::install_github("antiphon/lukeR")
+# or with some examples
+remotes::install_github("antiphon/lukeR", build_vignettes = TRUE)
+```
+
+
 
 ## Planned features
 
