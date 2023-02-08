@@ -22,15 +22,17 @@ library(lukeR)
 
 # Powerpoint
 
+**UPDATE: Powerpoint-templates are no longer included in `lukeR`, as they come with all Valtti units. The stuff below is obsolete.**
+
 Luke has a set of Powerpoint templates. The function will simply copy one of them to a designated location. The default is current working directory, as usual.
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval=FALSE}
 luke_presentation(path = "example_path", type = "pp", lang="fi", ask = FALSE)
 
 ```
 
 
-```{r}
+```{r, eval=FALSE}
 luke_presentation(path = "example_path/", type = "pp", lang = "fi")
 dir("example_path")
 ```
