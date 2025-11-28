@@ -6,19 +6,20 @@
 \usage{
 scale_color_luke_c(
   ...,
-  alpha = 1,
-  begin = 0,
-  end = 1,
-  direction = 1,
-  option = "A",
   values = NULL,
   space = "Lab",
   na.value = "grey50",
   guide = "colourbar",
   aesthetics = "colour",
-  iwh = FALSE
+  ncolours = 8
 )
+}
+\arguments{
+\item{...}{passed on to luke_pal}
 }
 \description{
 GG Continuous Scale
+}
+\details{
+luke_pal is used for creating 6 colors for interpolation.
 }

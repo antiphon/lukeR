@@ -7,7 +7,7 @@ Author: Tuomas Rajala <tuomas.rajala@luke.fi>
 Maintainer: Tuomas Rajala <tuomas.rajala@luke.fi>
 Description: Luke colour palettes, fonts, logos, themes and templates.
 License: Restricted
-RoxygenNote: 7.1.2
+RoxygenNote: 7.3.2
 Suggests: 
     knitr,
     rmarkdown

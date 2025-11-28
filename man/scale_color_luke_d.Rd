@@ -4,19 +4,12 @@
 \alias{scale_color_luke_d}
 \title{GG Discrete Scale}
 \usage{
-scale_color_luke_d(
-  ...,
-  alpha = 1,
-  begin = 0,
-  end = 1,
-  direction = 1,
-  option = "A",
-  aesthetics = "colour",
-  iwh = FALSE
-)
+scale_color_luke_d(..., aesthetics = "colour")
 }
 \arguments{
-\item{iwh}{Should neighbouring colors be maximally different in contrast? (I want hue)}
+\item{...}{passed on to luke_pal}
+
+\item{aesthetic}{defaults to "colour"}
 }
 \description{
 GG Discrete Scale
